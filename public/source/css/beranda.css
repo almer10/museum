@@ -1,0 +1,87 @@
+.section1 {
+    background: url(/source/img/item2.png);
+    color: white;
+    height: 90vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.content1 {
+    text-align: center;
+    padding-top: 15%;
+}
+
+.section3 {
+    background-color: #d9d9d9;
+}
+
+.link-detail {
+    text-decoration: none;
+    color: black;
+}
+
+.link-detail:hover {
+    color: black;
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-text {
+    text-align: justify;
+}
+
+@media (max-width: 426px) {
+    .section1 {
+        height: 20vh;
+    }
+
+    .content1 h1 {
+        font-size: larger !important;
+    }
+
+    .content1 h6 {
+        font-size: large !important;
+    }
+
+    .container .row .col-lg-3 .card {
+        margin-bottom: 10px;
+    }
+
+    .container .row .col-lg-3 {
+        text-align: center;
+    }
+
+    .container .row {
+        margin-bottom: 10px;
+    }
+}

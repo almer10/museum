@@ -1,0 +1,10 @@
+.logo-footer {
+    width: 50%;
+    border-radius: 150px;
+}
+
+@media (max-width: 426px) {
+    #footer .row .logo {
+        text-align: center;
+    }
+}

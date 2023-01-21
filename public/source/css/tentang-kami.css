@@ -1,0 +1,62 @@
+.text-section1 {
+    color: white;
+    font-size: 17px;
+}
+
+.section-2 {
+    background-color: #ffd0d0;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+
+.text-section2 {
+    text-align: justify;
+    margin-bottom: 10px;
+    /* overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis; */
+}
+
+.foto-tentang-kami {
+    width: 35rem;
+    height: 18rem;
+}
+
+.card {
+    width: 25rem;
+    margin-bottom: 2rem;
+}
+
+.gambar-card {
+    width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card-text {
+    text-align: justify;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.gambar-modal {
+    width: 70%;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.modal-body {
+    text-align: justify;
+}
+
+@media (max-width: 426px) {
+    .foto-tentang-kami {
+        width: 26rem;
+        height: 15rem;
+        margin-bottom: 10px;
+    }
+}

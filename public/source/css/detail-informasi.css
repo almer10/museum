@@ -1,0 +1,20 @@
+.deskripsi {
+    text-align: justify;
+}
+
+.foto-detail {
+    width: 80%;
+    height: auto;
+}
+
+.btn-kuning {
+    background-color: #ffe400;
+    color: white;
+    width: 10%;
+    border-radius: 10px;
+}
+
+.btn-kuning:hover {
+    background-color: #ecc911;
+    color: white;
+}

@@ -1,0 +1,30 @@
+#login {
+    background-image: url(/source/img/item2.png);
+    height: 85vh;
+    background-size: cover;
+}
+
+.card {
+    width: 40%;
+    margin-top: 5rem;
+}
+
+.card-title,
+.card-text {
+    text-align: center;
+}
+
+.btn-login .btn {
+    text-align: center !important;
+    width: 100%;
+}
+
+@media (max-width: 426px) {
+    #login {
+        height: 45vh;
+    }
+
+    .card {
+        width: 80%;
+    }
+}

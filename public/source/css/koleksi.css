@@ -1,0 +1,29 @@
+.sub-tittle {
+    color: #848181;
+    text-align: center;
+}
+
+.card-title {
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+}
+
+.card-text {
+    text-align: justify;
+}
+
+.link-detail {
+    text-decoration: none;
+    color: black;
+}
+
+.link-detail:hover {
+    color: black;
+}
+
+@media (max-width: 426px) {
+    #koleksi .row .col-lg-3 {
+        text-align: center !important;
+    }
+}

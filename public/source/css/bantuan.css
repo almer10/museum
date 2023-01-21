@@ -1,0 +1,182 @@
+h1 {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 45px;
+}
+
+h2 {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 36px;
+    color: white;
+}
+
+h3 {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+}
+
+h4 {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+h5 {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+h6 {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+p {
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+    color: white;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+    margin: 0;
+}
+
+body {
+    background-color: white;
+}
+
+.faq {
+    margin-top: 122px;
+}
+
+.col-sm-6 i {
+    font-size: 32px;
+    padding-right: 132px;
+}
+
+#accordionExample {
+    padding-top: 80px;
+}
+
+#accordionExample .accordion-item {
+    background-color: white;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 27px;
+    border: 0px;
+    padding-bottom: 25px;
+}
+
+#accordionExample .accordion-button {
+    background-color: white;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 27px;
+}
+
+#accordionExample .accordion-button:hover {
+    color: black;
+}
+
+#accordionExample .accordion-body {
+    text-align: justify;
+}
+
+.card {
+    width: 140vh;
+    height: auto;
+    background: #f8d7da;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
+    margin-left: 80px;
+}
+
+.btn-1 {
+    width: 256px;
+    height: 43px;
+    background-color: #001a41;
+    border-radius: 10px;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: 0.01em;
+    color: #ffffff;
+}
+
+.btn-1:hover {
+    background-color: #243751;
+    color: #ffffff;
+}
+
+#sectionFive .btn-1 {
+    width: 256px;
+    height: 43px;
+    background: #001a41;
+    border-radius: 10px;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: 0.01em;
+    color: #ffffff;
+}
+
+#sectionFive .btn-1:hover {
+    background-color: #243751;
+}
+
+#sectionFive .col-sm-4 {
+    padding-top: 49px;
+}
+
+#sectionFive .img-section5 {
+    width: 162px;
+    height: 162px;
+}
+
+@media (max-width: 426px) {
+    #sectionFive .card {
+        width: 60vh;
+        margin-left: 25px;
+    }
+
+    #sectionFive .h2-secFive {
+        font-size: 20px;
+    }
+
+    #sectionFive .h4-secFive {
+        font-size: 14px;
+    }
+
+    #accordionExample a {
+        padding-right: 5rem;
+    }
+}
