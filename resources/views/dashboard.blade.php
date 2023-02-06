@@ -2,13 +2,14 @@
 @section('dashboard')
     <div class="sidebar">
         <a href="/">
-            <img src="/source/img/logo.png" class="logo" alt="">
+            <img src="/source/img/logo-baru1.png" class="logo" alt="">
         </a>
-        <a class="active" href="/dashboard">Dashboard</a>
-        <a href="{{ route('logout') }}">Logout</a>
+        <a class="text-white" href="/dashboard"><i class="bi bi-house-door-fill"></i> Dashboard</a>
+        <a class="text-white" href="{{ route('logout') }}"><i class="bi bi-door-open-fill"></i> Logout</a>
     </div>
 
     <div class="content">
+        <h2 class="mb-3">Dashboard Admin</h2>
         <!-- Nav tabs -->
         <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item" role="presentation">
@@ -17,7 +18,7 @@
             </li>
             <li class="nav-item" role="presentation">
                 <button class="nav-link" id="admin-tab" data-bs-toggle="tab" data-bs-target="#admin" type="button"
-                    role="tab" aria-controls="admin" aria-selected="false">Data Admin</button>
+                    role="tab" aria-controls="admin" aria-selected="false">Admin</button>
             </li>
             <li class="nav-item" role="presentation">
                 <button class="nav-link" id="event-tab" data-bs-toggle="tab" data-bs-target="#event" type="button"
@@ -28,36 +29,70 @@
         <!-- Tab panes -->
         <div class="tab-content">
             <div class="tab-pane active" id="benda" role="tabpanel" aria-labelledby="benda-tab" tabindex="0">
-                <a href="{{ route('pusaka.create') }}">
-                    <button class="btn btn-success my-3">Tambah Data</button>
-                </a>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <a href="{{ route('pusaka.create') }}">
+                            <button class="btn btn-success my-3">Tambah Data</button>
+                        </a>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="dropdown mt-3" style="text-align: end">
+                            <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton1"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Kategori
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                @foreach ($cats as $cat)
+                                    <li><a class="dropdown-item"
+                                            href="{{ route('dashboard', ['category' => $cat]) }}">{{ ucwords($cat) }}</a>
+                                    </li>
+                                @endforeach
+                            </ul>
+                            <a href="{{ route('view.pdf') }}">
+                                <button class="btn btn-success">
+                                    <i class="bi bi-printer-fill"></i>
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
                 <div class="table-responsive">
                     <table class="table table-bordered">
                         <thead>
                             <tr class="table-primary">
                                 <th>No</th>
                                 <th>Nama Benda</th>
+                                <th>Kategori</th>
                                 <th>Jumlah</th>
                                 <th>Keadaan Dahulu</th>
                                 <th>Kondisi Sekarang</th>
                                 <th>Asal Perolehan</th>
                                 <th>Tanggal Perolehan</th>
                                 <th>Tempat Penyimpanan</th>
+                                <th>Spesifikasi</th>
                                 <th>Foto</th>
-                                <th>Action</th>
+                                <th>Keterangan</th>
+                                <th>Petugas Entry</th>
+                                <th>Waktu</th>
+                                @if ($role == 'Operator')
+                                @else
+                                    <th>Action</th>
+                                @endif
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($bendaPusaka as $bP)
                                 <tr>
-                                    <td>{{ $loop->iteration }}</td>
-                                    <td>{{ $bP->nama_benda }}</td>
-                                    <td>{{ $bP->jumlah }}</td>
-                                    <td>{{ $bP->kondisi_dahulu }}</td>
-                                    <td>{{ $bP->kondisi_sekarang }}</td>
-                                    <td>{{ $bP->asal_perolehan }}</td>
-                                    <td>{{ $bP->tanggal_perolehan->format('d M Y') }}</td>
-                                    <td>{{ $bP->tempat_penyimpanan }}</td>
+                                    <td class="text-capitalize">{{ $loop->iteration }}</td>
+                                    <td class="text-capitalize">{{ $bP->nama_benda }}</td>
+                                    <td class="text-capitalize">{{ $bP->kategori }}</td>
+                                    <td class="text-capitalize">{{ $bP->jumlah }}</td>
+                                    <td class="text-capitalize">{{ $bP->kondisi_dahulu }}</td>
+                                    <td class="text-capitalize">{{ $bP->kondisi_sekarang }}</td>
+                                    <td class="text-capitalize">{{ $bP->asal_perolehan }}</td>
+                                    <td class="tanggal">{{ $bP->tanggal_perolehan }}</td>
+                                    <td class="text-capitalize">{{ $bP->tempat_penyimpanan }}</td>
+                                    <td class="text-capitalize">{{ $bP->spesifikasi }}</td>
                                     <td>
                                         <a href="#pusaka-{{ $loop->iteration }}">
                                             Lihat Gambar
@@ -72,14 +107,18 @@
                                             <img src="{{ asset("storage/$bP->foto") }}" alt="{{ $bP->nama_benda }}">
                                         </div>
                                     </td>
-                                    <td>
-                                        <div class="row">
-                                            <div class="col-lg-5">
+                                    <td>{{ $bP->keterangan_benda }}</td>
+                                    <td>{{ $bP->admin->nama }}</td>
+                                    <td class="terakhir-edit">{{ $bP->terakhir_edit }}</td>
+                                    @if ($role == 'Operator')
+                                    @else
+                                        <td>
+                                            <div>
                                                 <a href="{{ route('pusaka.edit', ['bendaPusaka' => $bP->id]) }}">
                                                     <button class="btn btn-warning">Edit</button>
                                                 </a>
                                             </div>
-                                            <div class="col-lg-5">
+                                            <div>
                                                 <form method="post"
                                                     action="{{ route('pusaka.delete', ['bendaPusaka' => $bP->id]) }}">
                                                     @csrf
@@ -87,8 +126,8 @@
                                                     <button class="btn btn-danger" type="submit">Hapus</button>
                                                 </form>
                                             </div>
-                                        </div>
-                                    </td>
+                                        </td>
+                                    @endif
                                 </tr>
                             @endforeach
                         </tbody>
@@ -96,16 +135,40 @@
                 </div>
             </div>
             <div class="tab-pane" id="admin" role="tabpanel" aria-labelledby="admin-tab" tabindex="0">
-                <a href="{{ route('admin.create') }}"><button class="btn btn-success my-3">Tambah Data</button></a>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <a href="{{ route('admin.create') }}"><button class="btn btn-success my-3">Tambah
+                                Data</button></a>
+                    </div>
+                    <div class="col-lg-6" style="text-align: end">
+                        <a href="{{ route('admin.pdf') }}">
+                            <button class="btn btn-success mt-3">
+                                <i class="bi bi-printer-fill"></i>
+                            </button>
+                        </a>
+                    </div>
+                </div>
                 <div class="table-responsive">
                     <table class="table table-bordered">
                         <thead>
                             <tr class="table-primary">
                                 <th>No</th>
-                                <th>NIP</th>
-                                <th>Password</th>
+                                <th>Username</th>
                                 <th>Nama</th>
-                                <th>Action</th>
+                                <th>No KTP</th>
+                                <th>Tanggal Lahir</th>
+                                <th>Alamat</th>
+                                <th>Status</th>
+                                <th>Pekerjaan</th>
+                                <th>Mulai Berlaku jadi Admin</th>
+                                <th>Berakhir jadi Admin</th>
+                                <th>Keterangan</th>
+                                <th>Status Keaktifan</th>
+                                <th>Keterangan Non-Aktif</th>
+                                @if ($role == 'Operator')
+                                @else
+                                    <th>Action</th>
+                                @endif
                             </tr>
                         </thead>
                         <tbody>
@@ -113,15 +176,25 @@
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $admin->username }}</td>
-                                    <td>{{ $admin->password }}</td>
                                     <td>{{ $admin->nama }}</td>
-                                    <td>
-                                        <div class="row">
-                                            <div class="col-lg-5">
+                                    <td>{{ $admin->no_ktp }}</td>
+                                    <td>{{ date('d-m-Y', strtotime($admin->tanggal_lahir)) }}</td>
+                                    <td>{{ $admin->alamat }}</td>
+                                    <td>{{ $admin->status == '0' ? 'Belum Menikah' : 'Menikah' }}</td>
+                                    <td>{{ $admin->pekerjaan }}</td>
+                                    <td>{{ date('d-m-Y', strtotime($admin->tanggal_mulai)) }}</td>
+                                    <td>{{ date('d-m-Y', strtotime($admin->tanggal_akhir)) }}</td>
+                                    <td>{{ $admin->keterangan }}</td>
+                                    <td>{{ $admin->aktif == '0' ? 'Aktif' : 'Non-Aktif' }}</td>
+                                    <td>{{ $admin->keterangan_non_aktif }}</td>
+                                    @if ($role == 'Operator')
+                                    @else
+                                        <td>
+                                            <div>
                                                 <a href="{{ route('admin.edit', ['admin' => $admin->id]) }}"><button
                                                         class="btn btn-warning">Edit</button></a>
                                             </div>
-                                            <div class="col-lg-5">
+                                            <div>
                                                 <form method="post"
                                                     action="{{ route('admin.delete', ['admin' => $admin->id]) }}">
                                                     @csrf
@@ -129,8 +202,8 @@
                                                     <button class="btn btn-danger" type="submit">Hapus</button>
                                                 </form>
                                             </div>
-                                        </div>
-                                    </td>
+                                        </td>
+                                    @endif
                                 </tr>
                             @endforeach
                         </tbody>
@@ -148,16 +221,19 @@
                                 <th>Deskripsi</th>
                                 <th>Tanggal Acara</th>
                                 <th>Foto</th>
-                                <th>Action</th>
+                                @if ($role == 'Operator')
+                                @else
+                                    <th>Action</th>
+                                @endif
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($events as $event)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
-                                    <td>{{ $event->name_event }}</td>
+                                    <td class="text-capitalize">{{ $event->name_event }}</td>
                                     <td>{{ $event->deskripsi }}</td>
-                                    <td>{{ $event->tanggal_event->format('d M Y') }}</td>
+                                    <td class="tanggal">{{ $event->tanggal_event }}</td>
                                     <td>
                                         <a href="#event-{{ $loop->iteration }}">
                                             Lihat Gambar
@@ -173,22 +249,25 @@
                                                 alt="{{ $event->name_event }}">
                                         </div>
                                     </td>
-                                    <td>
-                                        <div class="row">
-                                            <div class="col-lg-5">
-                                                <a href="{{ route('event.edit', ['event' => $event->id]) }}"><button
-                                                        class="btn btn-warning">Edit</button></a>
+                                    @if ($role == 'Operator')
+                                    @else
+                                        <td>
+                                            <div class="row">
+                                                <div class="col-lg-5">
+                                                    <a href="{{ route('event.edit', ['event' => $event->id]) }}"><button
+                                                            class="btn btn-warning">Edit</button></a>
+                                                </div>
+                                                <div class="col-lg-5">
+                                                    <form method="post"
+                                                        action="{{ route('event.delete', ['event' => $event->id]) }}">
+                                                        @csrf
+                                                        @method('delete')
+                                                        <button class="btn btn-danger" type="submit">Hapus</button>
+                                                    </form>
+                                                </div>
                                             </div>
-                                            <div class="col-lg-5">
-                                                <form method="post"
-                                                    action="{{ route('event.delete', ['event' => $event->id]) }}">
-                                                    @csrf
-                                                    @method('delete')
-                                                    <button class="btn btn-danger" type="submit">Hapus</button>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </td>
+                                        </td>
+                                    @endif
                                 </tr>
                             @endforeach
                         </tbody>

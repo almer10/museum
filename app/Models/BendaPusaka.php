@@ -13,6 +13,7 @@ class BendaPusaka extends Model
 
     const DIRETORY = 'pusaka';
     const CATEGORY = [
+        'all',
         'keris', 
         'badik', 
         'pedang', 
@@ -39,11 +40,16 @@ class BendaPusaka extends Model
         'deskripsi',
         'tanggal_perolehan',
         'tempat_penyimpanan',
+        'spesifikasi',
         'foto',
+        'keterangan_benda',
+        'terakhir_edit',
+        'id_admin',
     ];
 
     protected $casts = [
         'tanggal_perolehan' => 'datetime',
+        'terakhir_edit' => 'datetime',
     ];
 
     public function saveWithFile()
@@ -62,6 +68,10 @@ class BendaPusaka extends Model
         if ($this->isDirty()) {
             $this->save();
         };
+    }
+
+    public function admin() {
+        return $this->hasOne(Admin::class, 'id', 'id_admin');
     }
 
     protected static function booted()

@@ -2,7 +2,7 @@
 @section('tambah-event')
     <div class="sidebar">
         <a href="/">
-            <img src="/source/img/logo.png" class="logo" alt="">
+            <img src="/source/img/logo-baru1.png" class="logo" alt="">
         </a>
         <a class="text-white" href="/dashboard"><i class="bi bi-house-door-fill"></i> Dashboard</a>
         <a class="text-white" href="{{ route('logout') }}"><i class="bi bi-door-open-fill"></i> Logout</a>

@@ -48,9 +48,9 @@
             yang berada di sekitarnya terdiri dari:
         </p>
         <div class="row">
-            <div class="col-lg-4">
+            <div class="col-lg-4 col-md-4 col-sm-6">
                 <div class="card">
-                    <img src="/source/img/gedung-gendeng.png" class="gambar-card">
+                    <img src="/source/img/gedung-gendeng-1.jpg" class="gambar-card">
                     <div class="card-body">
                         <h5 class="card-title text-center">Gedung Gendeng</h5>
                         <div class="card-text mb-3">
@@ -68,9 +68,9 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-4 col-md-4 col-sm-6">
                 <div class="card">
-                    <img src="/source/img/gedung-gamelan.png" class="gambar-card">
+                    <img src="/source/img/gedung-gamelan.jpg" class="gambar-card">
                     <div class="card-body">
                         <h5 class="card-title text-center">Gedung Gamelan</h5>
                         <div class="card-text mb-3">
@@ -87,9 +87,9 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-4 col-md-4 col-sm-6">
                 <div class="card">
-                    <img src="/source/img/gedung-kaler.png" class="gambar-card">
+                    <img src="/source/img/gedung-kaler.jpg" class="gambar-card">
                     <div class="card-body">
                         <h5 class="card-title text-center">Gedung Bumi Kaler</h5>
                         <div class="card-text mb-3">
@@ -110,9 +110,9 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-4 col-md-4 col-sm-6">
                 <div class="card">
-                    <img src="/source/img/gedung-kereta.png" class="gambar-card">
+                    <img src="/source/img/gedung-kereta.jpg" class="gambar-card">
                     <div class="card-body">
                         <h5 class="card-title text-center">Gedung Kereta</h5>
                         <div class="card-text mb-3">
@@ -128,9 +128,9 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-4 col-md-4 col-sm-6">
                 <div class="card">
-                    <img src="/source/img/gedung-pusaka.png" class="gambar-card">
+                    <img src="/source/img/gedung-pusaka.jpg" class="gambar-card">
                     <div class="card-body">
                         <h5 class="card-title text-center">Gedung Pusaka</h5>
                         <div class="card-text mb-3">
@@ -145,9 +145,9 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-4 col-md-4 col-sm-6">
                 <div class="card">
-                    <img src="/source/img/item1.jpg" class="gambar-card">
+                    <img src="/source/img/gedung-srimaganti.jpg" class="gambar-card">
                     <div class="card-body">
                         <h5 class="card-title text-center">Gedung Srimaganti</h5>
                         <div class="card-text mb-3">

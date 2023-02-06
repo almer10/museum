@@ -4,8 +4,8 @@
         <h3 class="text-center">Koleksi</h3>
         <p class="sub-tittle fs-4">Berikut barang koleksi yang berada di museum prabu geusan ulun</p>
         <div class="dropdown mb-3" style="text-align: end">
-            <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
-                aria-expanded="false">
+            <button class="btn btn-success dropdown-toggle text-white" type="button" id="dropdownMenuButton1"
+                data-bs-toggle="dropdown" aria-expanded="false">
                 Kategori
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
@@ -20,7 +20,9 @@
                 <div class="col-lg-3">
                     <a href="{{ route('pusaka.show', ['bendaPusaka' => $bP->id]) }}" class="link-detail">
                         <div class="card p-0 mb-3" style="width: 18rem;">
-                            <img src="{{ asset("storage/$bP->foto") }}" class="card-img-top" alt="...">
+                            <div class="photo">
+                                <img src="{{ asset("storage/$bP->foto") }}" class="card-img-top" alt="...">
+                            </div>
                             <div class="card-body">
                                 <h5 class="card-title">{{ $bP->nama_benda }}</h5>
                                 <p class="card-text">

@@ -4,7 +4,7 @@
 }
 
 .menu {
-    font-size: 18px;
+    font-size: 15px;
     color: white;
     text-decoration: none;
     font-weight: 600;
@@ -12,4 +12,10 @@
 
 .menu:hover {
     color: white;
+}
+
+@media (max-width: 1025px) {
+    .menu {
+        font-size: medium;
+    }
 }

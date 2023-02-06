@@ -16,8 +16,18 @@ class CreateAdminsTable extends Migration
         Schema::create('admins', function (Blueprint $table) {
             $table->id();
             $table->string('username')->unique();
-            $table->string('password');
+            $table->string('password'); 
             $table->string('nama');
+            $table->string('no_ktp');
+            $table->boolean('status');
+            $table->string('alamat');
+            $table->dateTime('tanggal_lahir');
+            $table->datetime('tanggal_mulai');
+            $table->datetime('tanggal_akhir');
+            $table->string('pekerjaan');
+            $table->text('keterangan');
+            $table->boolean('aktif');
+            $table->text('keterangan_non_aktif')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

@@ -21,10 +21,14 @@ class CreateBendaPusakaTable extends Migration
             $table->string('kondisi_dahulu');
             $table->string('kondisi_sekarang');
             $table->string('asal_perolehan');
-            $table->string('deskripsi');
+            $table->text('deskripsi');
             $table->datetime('tanggal_perolehan');
             $table->string('tempat_penyimpanan');
             $table->string('foto');
+            $table->string('spesifikasi');
+            $table->text('keterangan_benda');
+            $table->integer('id_admin');
+            $table->dateTime('terakhir_edit');
             $table->timestamps();
         });
     }

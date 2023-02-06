@@ -2,7 +2,7 @@
 @section('tambah-data')
     <div class="sidebar">
         <a href="/">
-            <img src="/source/img/logo.png" class="logo" alt="">
+            <img src="/source/img/logo-baru1.png" class="logo" alt="">
         </a>
         <a class="text-white" href="/dashboard"><i class="bi bi-house-door-fill"></i> Dashboard</a>
         <a class="text-white" href="{{ route('logout') }}"><i class="bi bi-door-open-fill"></i> Logout</a>
@@ -10,7 +10,7 @@
     <div class="content pt-4">
         <div class="card mx-auto">
             <h4 class="mb-3">Data Benda Pusaka</h4>
-            <form method="post" action="{{ route('pusaka.store') }}" enctype="multipart/form-data">
+            <form method="post" action="{{ route('pusaka.store') }}" enctype="multipart/form-data" class="mb-3">
                 @csrf
                 <div class="mb-3">
                     <label for="namaBenda" class="form-label">Nama Benda</label>
@@ -83,6 +83,22 @@
                     <input type="text" class="form-control" id="tempatPeyimpanan" name="tempat_penyimpanan"
                         value="{{ old('tempat_penyimpanan') }}">
                     @error('tempat_penyimpanan')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
+                </div>
+                <div class="mb-3">
+                    <label for="spesifikasi" class="form-label">Spesifikasi Benda</label>
+                    <input type="text" class="form-control" id="spesifikasi" name="spesifikasi"
+                        value="{{ old('spesifikasi') }}">
+                    @error('spesifikasi')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
+                </div>
+                <div class="mb-3">
+                    <label for="keterangan_benda" class="form-label">Keterangan</label>
+                    <input type="text" class="form-control" id="keterangan_benda" name="keterangan_benda"
+                        value="{{ old('keterangan_benda') }}">
+                    @error('keterangan_benda')
                         <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                 </div>

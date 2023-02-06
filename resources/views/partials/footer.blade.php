@@ -2,7 +2,7 @@
     <div id="footer" class="container py-5">
         <div class="row g-5">
             <div class="col-lg-3 col-md-6 logo">
-                <img src="/source/img/logo.png" class="logo-footer" alt="">
+                <img src="/source/img/logo-baru1.png" class="logo-footer" alt="">
             </div>
             <div class="col-lg-3 col-md-6" style="text-align: justify">
                 <h5 class="text-white mb-4">Museum Prabu Geusan Ulun</h5>

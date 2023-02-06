@@ -32,7 +32,20 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment-with-locales.min.js"></script>
+    <script src="https://momentjs.com/downloads/moment-timezone-with-data.js"></script>
+    <script type="text/javascript">
+        var waktu = document.querySelectorAll(".terakhir-edit");
+        var tanggal = document.querySelectorAll(".tanggal");
+        waktu.forEach(element => {
+            element.innerHTML = moment(element.innerHTML).tz('Pacific/Kiritimati').locale('id').format(
+                'Do MMM YYYY, HH:mm:ss');
+        });
+        tanggal.forEach(element => {
+            element.innerHTML = moment(element.innerHTML).locale('id').format(
+                'Do MMM YYYY');
+        });
+    </script>
 </body>
 
 </html>

@@ -24,11 +24,17 @@ class AdminRequest extends FormRequest
     public function rules()
     {
         $passwordRules = $this->isMethod('PUT') ? 'nullable|string' : 'required|string';
-
         return [
-            'nama' => 'required|string',
             'username' => 'required|string',
             'password' => $passwordRules,
+            'nama' => 'required|string',
+            'alamat' => 'required|string',
+            'tanggal_lahir' => 'required|date',
+            'status' => 'required|boolean',
+            'pekerjaan' => 'required|string',
+            'no_ktp' => 'required|string',
+            'keterangan' => 'string',
+            'aktif' => 'string',
         ];
     }
 }
